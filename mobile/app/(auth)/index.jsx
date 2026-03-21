@@ -10,9 +10,11 @@ import {
   StatusBar,
   Pressable,
 } from "react-native";
-import useAuthStore from "./store/useAuthStore";
+import useAuthStore from "../../store/useAuthStore";
+import { useRouter } from "expo-router";
 
 export default function LoginScreen({ navigation }) {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -150,7 +152,7 @@ export default function LoginScreen({ navigation }) {
         {/* Footer */}
         <View className="flex-row justify-center mt-9">
           <Text className="text-[#555] text-sm">Chưa có tài khoản? </Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+          <TouchableOpacity onPress={() => router.push("/signup")}>
             <Text className="text-[#C8A96E] text-sm font-semibold">Đăng ký ngay</Text>
           </TouchableOpacity>
         </View>

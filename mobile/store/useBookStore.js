@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import axiosInstance from "../lib/axios";
+import axiosInstance from "./lib/axios";
 
 const useBookStore = create((set, get) => ({
   // ─── State ───────────────────────────────────────────────

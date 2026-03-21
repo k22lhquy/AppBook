@@ -42,6 +42,8 @@ const register = async (req, res) => {
 
     const token = generateToken(user._id);
 
+    console.log("User registered:", user.username); // Debug log
+
     res.status(201).json({
       token,
       user: {
@@ -73,6 +75,8 @@ const login = async (req, res) => {
     if (!isPasswordCorrect) return res.status(400).json({ message: "Invalid credentials" });
 
     const token = generateToken(user._id);
+
+    console.log("User logged in:", user.username); // Debug log
 
     res.status(200).json({
       token,
